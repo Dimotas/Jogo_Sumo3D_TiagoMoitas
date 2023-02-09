@@ -9,12 +9,12 @@ public class GameController : MonoBehaviour
     private Rigidbody rb;
     private float Speed;
     private GameObject focalPoint;
-    private bool hasPower;
-    private float powerForce = 50f;
-    public GameObject powerIndicator;
+    private bool poder;
+    private float superPoder = 50f;
+    public GameObject indicadorPoder;
+    public GameObject informacaoPausa;
     public GameObject pausa;
-    public GameObject pausaInfo;
-    public bool shockWave;
+    public bool ondaShock;
     public TextMeshProUGUI textMeshProUGUI;
     
     
@@ -24,10 +24,10 @@ public class GameController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Speed = 2f;
         focalPoint = GameObject.Find("FocalPoint");
-        hasPower = false;
-        powerIndicator.SetActive(false);
+        poder = false;
+        indicadorPoder.SetActive(false);
         pausa.SetActive(false);
-        StartCoroutine(ShockWave());
+        StartCoroutine(OndaShock());
 
     }
 
@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
         float vInput = Input.GetAxis("Vertical");
         rb.AddForce(focalPoint.transform.forward * vInput * Speed);
         if (transform.position.y < -10f) Destroy(gameObject);
-        powerIndicator.transform.position = transform.position + new Vector3(0f, -0.5f, 0f);
+        indicadorPoder.transform.position = transform.position + new Vector3(0f, -0.5f, 0f);
 
 
         if (Input.GetKeyDown(KeyCode.P))
@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour
 
                 Time.timeScale = 0;
                 pausa.SetActive(true);
-                pausaInfo.SetActive(false);
+                informacaoPausa.SetActive(false);
 
             }
 
@@ -55,7 +55,7 @@ public class GameController : MonoBehaviour
             {
                 Time.timeScale = 1;
                 pausa.SetActive(false);
-                pausaInfo.SetActive(true) ;
+                informacaoPausa.SetActive(true) ;
             }
                 
         }
@@ -64,7 +64,7 @@ public class GameController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H))
         {
 
-            if (shockWave) { 
+            if (ondaShock) { 
                 var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
                 foreach (var enemy in enemies)
@@ -74,8 +74,8 @@ public class GameController : MonoBehaviour
                 }
 
 
-                shockWave= false;
-                StartCoroutine(ShockWave());
+                ondaShock= false;
+                StartCoroutine(OndaShock());
             }
         }
 
@@ -96,8 +96,8 @@ public class GameController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("PickUp"))
         {
-            hasPower= true;
-            powerIndicator.SetActive(true);
+            poder= true;
+            indicadorPoder.SetActive(true);
             Destroy(other.gameObject);
             StartCoroutine(ContarPower());
         }
@@ -107,23 +107,23 @@ public class GameController : MonoBehaviour
     {
         
         yield return new WaitForSeconds(15f);
-        hasPower= false;
-        powerIndicator.SetActive(false) ;
+        poder= false;
+        indicadorPoder.SetActive(false) ;
     }
 
-    IEnumerator ShockWave()
+    IEnumerator OndaShock()
     {
-        int countdown = 60;
+        int timeleft = 60;
 
-        while (countdown > 0)
+        while (timeleft > 0)
         {
-            textMeshProUGUI.text = countdown.ToString();
+            textMeshProUGUI.text = timeleft.ToString();
 
             yield return new WaitForSeconds(1.0f);
 
-            countdown--;
+            timeleft--;
         }
-        shockWave = true;
+        ondaShock = true;
         textMeshProUGUI.text = "H";
     }
 
@@ -132,11 +132,11 @@ public class GameController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && hasPower)
+        if (collision.gameObject.CompareTag("Enemy") && poder)
         {
             Rigidbody rbEnemy = collision.gameObject.GetComponent<Rigidbody>();
             Vector3 awayFromEnemy = collision.gameObject.transform.position- transform.position;
-            rbEnemy.AddForce(awayFromEnemy*powerForce, ForceMode.Impulse);
+            rbEnemy.AddForce(awayFromEnemy*superPoder, ForceMode.Impulse);
         }
     }
 }

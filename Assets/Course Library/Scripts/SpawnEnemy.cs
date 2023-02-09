@@ -10,7 +10,7 @@ public class SpawnEnemy : MonoBehaviour
     private int enemyCount;
     private int waveNumber = 1;
     public GameController gc;
-    public GameObject powerUp;
+    public GameObject newPower;
     void Start()
     {
         SpawnEnemyWave(waveNumber);
@@ -33,11 +33,11 @@ public class SpawnEnemy : MonoBehaviour
     }
 
 
-    void CheckPowerUP()
+    void VerificarPoder()
     {
         if (GameObject.FindGameObjectsWithTag("PickUp").Length == 0) {
 
-            Instantiate(powerUp, GenerateSpawnPosition(),powerUp.transform.rotation);
+            Instantiate(newPower, GenerateSpawnPosition(),newPower.transform.rotation);
         
         
         }
@@ -53,7 +53,7 @@ public class SpawnEnemy : MonoBehaviour
             if (enemyCount == 0)
             {
                 SpawnEnemyWave(++waveNumber);
-                CheckPowerUP();
+                VerificarPoder();
             }
         }
 

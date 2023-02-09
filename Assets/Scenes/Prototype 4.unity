@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 202564590}
   - component: {fileID: 202564589}
   m_Layer: 5
-  m_Name: Space Info
+  m_Name: Travao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: -519.45, y: -307}
   m_SizeDelta: {x: 280.5537, y: 64.079}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &202564589
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\"Space\" para trav\xE3o"
+  m_text: 'Travar: "Space"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -190,8 +190,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282988536
+  m_fontColor: {r: 0.9716981, g: 0.21450691, b: 0.28686127, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 296872767}
   - component: {fileID: 296872766}
   m_Layer: 5
-  m_Name: shockwave
+  m_Name: ondashock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,7 +730,7 @@ GameObject:
   - component: {fileID: 620391110}
   - component: {fileID: 620391109}
   m_Layer: 5
-  m_Name: Menu Info
+  m_Name: Pausa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,7 +753,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000091552734}
+  m_AnchoredPosition: {x: 0, y: -307}
   m_SizeDelta: {x: 280.5537, y: 64.079}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &620391109
@@ -776,7 +776,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pressione "P" para pausa
+  m_text: 'Pause: "P"'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -785,8 +785,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281394975
+  m_fontColor: {r: 0.123033054, g: 0.9056604, b: 0.18995796, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3134375052583868668, guid: 82dd8f640b41d684c9aad3f36c3dce98, type: 3}
   gc: {fileID: 1102265843}
-  powerUp: {fileID: 3350971683966902353, guid: 910966fae415fd84bbc83c5399566e72, type: 3}
+  newPower: {fileID: 0}
 --- !u!4 &681647097
 Transform:
   m_ObjectHideFlags: 0
@@ -1089,9 +1089,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pausa
+  m_text: 'Game Paused
 
-    Pressione "P" para voltar ao jogo'
+    Press "P" to continue...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1100,8 +1100,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280285229
+  m_fontColor: {r: 0.17597063, g: 0.9716981, b: 0.12283729, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1340,17 +1340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e18c302c3468ba40859fbacebf2bfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerIndicator: {fileID: 1134949396}
+  indicadorPoder: {fileID: 0}
+  informacaoPausa: {fileID: 0}
   pausa: {fileID: 941545253}
-  pausaInfo: {fileID: 620391107}
-  shockWave: 0
+  ondaShock: 0
   textMeshProUGUI: {fileID: 289851758}
---- !u!1 &1134949396 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1742899641471652, guid: 923deea38dc6a8843b15db7638919c1e,
-    type: 3}
-  m_PrefabInstance: {fileID: 697409451}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1211016355
 GameObject:
   m_ObjectHideFlags: 0
