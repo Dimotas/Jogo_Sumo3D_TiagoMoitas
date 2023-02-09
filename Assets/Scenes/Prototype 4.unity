@@ -367,7 +367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.69999695}
+  m_AnchoredPosition: {x: 0, y: -11.7}
   m_SizeDelta: {x: 40.7874, y: 39.702698}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &289851758
@@ -401,8 +401,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4280736499
+  m_fontColor: {r: 0.9528302, g: 0.8540514, b: 0.14741895, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -419,8 +419,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 296872767}
   - component: {fileID: 296872766}
   m_Layer: 5
-  m_Name: ondashock
+  m_Name: OndaShock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,7 +505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: 0}
+  m_AnchoredPosition: {x: 736.2, y: 0}
   m_SizeDelta: {x: 64.0791, y: 64.0791}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &296872766
@@ -521,14 +521,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9150943, g: 0.8201575, b: 0.20201136, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02d106fd3c9308942a179e5a5fe32d0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88018586c883b0645bb51e0309ed38e7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -884,7 +884,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3134375052583868668, guid: 82dd8f640b41d684c9aad3f36c3dce98, type: 3}
   gc: {fileID: 1102265843}
-  newPower: {fileID: 0}
+  newPower: {fileID: 3350971683966902353, guid: 910966fae415fd84bbc83c5399566e72,
+    type: 3}
 --- !u!4 &681647097
 Transform:
   m_ObjectHideFlags: 0
@@ -1043,7 +1044,7 @@ GameObject:
   - component: {fileID: 941545256}
   - component: {fileID: 941545255}
   m_Layer: 5
-  m_Name: Menu Pausa
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1340,8 +1341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e18c302c3468ba40859fbacebf2bfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  indicadorPoder: {fileID: 0}
-  informacaoPausa: {fileID: 0}
+  indicadorPoder: {fileID: 1859475483}
+  informacaoPausa: {fileID: 620391107}
   pausa: {fileID: 941545253}
   ondaShock: 0
   textMeshProUGUI: {fileID: 289851758}
@@ -1612,6 +1613,12 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 8878a37eb67ddac4ead51890a31d6a18, type: 3}
+--- !u!1 &1859475483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1742899641471652, guid: 923deea38dc6a8843b15db7638919c1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 697409451}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3352147057873656688
 PrefabInstance:
   m_ObjectHideFlags: 0
